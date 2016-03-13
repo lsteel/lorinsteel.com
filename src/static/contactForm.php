@@ -9,7 +9,7 @@
 
         if ( $name != '' && $email != '' && $message != '' ) {
             $mailTo = 'lorinsteel@gmail.com';
-            $subject = 'ls.com contact form submission';
+            $subject = $email . ' from ls.com contact form';
             $body  = 'From: ' . $name . "\n";
             $body .= 'Email: ' . $email . "\n";
             $body .= "Message:\n" . $message . "\n\n";

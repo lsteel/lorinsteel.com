@@ -8,19 +8,25 @@ angular
     var contactFuncs = {
 
       sendMessage: function( input, cb ) {
-        $http({
-          method: 'POST',
-          url: '/contactForm.php',
-          data: input,
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        })
-        .success( function(data) {
-          if ( data.success ) {
-            cb(null, data.success);
-          } else {
-            cb(true, null); //returns err is true in cb function
-          }
-        });
+        console.log('reached sendMessage function');
+        input.submit = true;
+
+        $http
+          .post('/contactForm.php', input)
+          .success(function(data, status) {
+            console.log(data);
+            if ( data.success ) {
+              console.log('reached success true');
+              cb(null, data.success);
+            }
+            else if (!data.success) {
+              console.log('reached success false');
+              cb(!data.success, null); //returns err is true in cb function
+            }
+            else {
+              console.log('reached last else');
+            }
+          });
       },
     };
 

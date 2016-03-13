@@ -28,6 +28,7 @@ angular
     contactCtrl.inputType = 'contact';
 
     contactCtrl.contact = function( input, cb ) {
+      console.log('Trying for contactFuncs');
       return contactFuncs.sendMessage( input, cb );
     };
   }
