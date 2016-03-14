@@ -1,29 +1,30 @@
 <div class="row">
-  <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+  <div class="contact-screen col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
     <h1>Contact</h1>
     <form method="post" name="form" role="form" ng-submit="form.$valid && contactCtrl.submit(input)" novalidate>
-      <p ng-show="contactCtrl.success">Thanks for getting in touch!</p>
-      <p ng-show="contactCtrl.error">Something wrong happened!, please try again.</p>
         <div class="form-group">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" ng-model="input.name" required>
+          <input class="form-control" type="text" id="name" name="name" ng-model="input.name" maxlength="50">
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" ng-model="input.email" required>
+          <input class="form-control" type="email" id="email" name="email" ng-model="input.email" maxlength="50">
         </div>
         <div class="form-group">
           <label for="messsage">Message:</label>
-          <textarea id="messsage" name="message" ng-model="input.message" required></textarea>
+          <textarea class="form-control" id="messsage" name="message" ng-model="input.message" maxlength="2000"></textarea>
         </div>
-        <div class="form-group">
-          <label for="honeypot">You're a bot if you enter something here:</label>
-          <input type="text" id="honeypot" name="honeypot" ng-model="input.honeypot">
+        <div class="form-group hidden">
+          <label class="hidden" for="poohbear">You're a bot if you enter something here:</label>
+          <input class="form-control hidden" type="text" id="poohbear" name="poohbear" ng-model="input.poohbear">
         </div>
       <button type="submit" name="submit" ng-click="contactCtrl.inputType = 'contact'" class="btn btn-default">Submit</button>
     </form>
-    <!-- <div class="alert alert-danger" ng-show="loginCtrl.errorMessage">
-      <p>{{ loginCtrl.errorMessage }}</p>
-    </div> -->
+    <div class="alert alert-danger" ng-show="contactCtrl.errorMessage">
+      <p>{{ contactCtrl.errorMessage }}</p>
+    </div>
+    <div class="alert alert-success" ng-show="contactCtrl.successMessage">
+      <p>{{ contactCtrl.successMessage }}</p>
+    </div>
   </div>
 </div>

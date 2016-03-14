@@ -4,23 +4,29 @@ angular
 ])
 .controller('ContactController', [
   'contactFuncs',
+  '$timeout',
   '$location',
-  function (contactFuncs, $location) {
+  function (contactFuncs, $timeout, $location) {
     var contactCtrl = this;
 
-    contactCtrl.success = false;
-    contactCtrl.error = false;
+    contactCtrl.errorMessage = null;
+    contactCtrl.successMessage = null;
 
     contactCtrl.submit = function( input ) {
-      contactCtrl.success = false;
-      contactCtrl.error = false;
+      contactCtrl.errorMessage = null;
+      contactCtrl.successMessage = null;
 
-      contactCtrl[contactCtrl.inputType]( input, function( err, succ ) {
-        if ( err ) {
-          contactCtrl.error = true;
+      input = (input === undefined ? {} : input);
+
+      contactCtrl[contactCtrl.inputType]( input, function( data, message ) {
+        if ( !data.success ) {
+          contactCtrl.errorMessage = message;
         }
-        else if ( succ && !err ) {
-          contactCtrl.success = true;
+        else if ( data.success ) {
+          contactCtrl.successMessage = message;
+          $timeout(function() {
+            $location.url('/');
+          }, 5000);
         }
       });
     };
@@ -28,7 +34,6 @@ angular
     contactCtrl.inputType = 'contact';
 
     contactCtrl.contact = function( input, cb ) {
-      console.log('Trying for contactFuncs');
       return contactFuncs.sendMessage( input, cb );
     };
   }

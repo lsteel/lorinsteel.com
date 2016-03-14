@@ -9,12 +9,25 @@
     <!-- <script src="https://use.typekit.net/bhl5ioi.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script> -->
     <!-- Backup Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css">
     <!-- Includes all compiled css based bower components; i.e. bootstrap.css, main.css, etc. -->
     <link rel="stylesheet" href="css/app.min.css">
   </head>
   <body>
     <div class="container-fluid">
+      <div class="row">
+        <header>
+          <a href="/" class="header-logo"><img src="images/ls-brackets-logo.png" alt="Lorin Steel Logo" /></a>
+          <nav>
+            <ul>
+              <li><span class="icon-twitter"></span></li>
+              <li><span class="icon-github"></span></li>
+              <li><span class="btn btn-info">blog</span></li>
+              <li><span class="icon-contact"></span></li>
+            </ul>
+          </nav>
+        </header>
+      </div>
       <div ng-view></div>
     </div>
     <div class="screen-resolution"><p></p></div>

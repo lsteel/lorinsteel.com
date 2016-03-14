@@ -29,6 +29,7 @@ var lib = require('bower-files')({
 });
 
 gulp.task('default', [
+  'bootstrapfonts',
   'fonts',
   'scripts',
   'styles',
@@ -38,6 +39,7 @@ gulp.task('default', [
 ]);
 
 gulp.task('watch', [
+  'bootstrapfonts',
   'fonts',
   'scripts.watch',
   'styles.watch',
@@ -100,8 +102,13 @@ gulp.task('static.watch', ['static'], function () {
 });
 
 
-gulp.task('fonts', function() {
+gulp.task('bootstrapfonts', function() {
   return gulp.src(lib.ext(['eot', 'svg', 'ttf', 'woff', 'woff2']).files)
+    .pipe(gulp.dest('public/fonts'));
+});
+
+gulp.task('fonts', function() {
+  return gulp.src('src/fonts/**/*')
     .pipe(gulp.dest('public/fonts'));
 });
 

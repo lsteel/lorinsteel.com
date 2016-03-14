@@ -1,14 +1,12 @@
-// main: main.styl
-
 @charset "UTF-8";
 
 @font-face {
   font-family: "lscom-icons";
-  src:url("../fonts/lscom-icons.eot");
-  src:url("../fonts/lscom-icons.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/lscom-icons.woff") format("woff"),
-    url("../fonts/lscom-icons.ttf") format("truetype"),
-    url("../fonts/lscom-icons.svg#lscom-icons") format("svg");
+  src:url("fonts/lscom-icons.eot");
+  src:url("fonts/lscom-icons.eot?#iefix") format("embedded-opentype"),
+    url("fonts/lscom-icons.woff") format("woff"),
+    url("fonts/lscom-icons.ttf") format("truetype"),
+    url("fonts/lscom-icons.svg#lscom-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 
