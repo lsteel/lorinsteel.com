@@ -8,9 +8,14 @@ $black = #000
 $white = #fff
 $off-white = #f1f2f2
 $clear-white = rgba(255,255,255,.75)
-
-//Futura-Heavy          700
-//Futura-Book           400
+$dark-grey = #333333
+$lgt-grey = #444444
+$red = #FF4232
+$orange = #FF5800
+$yellow = #FF9B00
+$green = #00C47D
+$blue = #0088C6
+$violet = #CB00C0
 
 a,
 a:link,
@@ -22,6 +27,10 @@ a:active
 
 h4,h5,h6,p,ol,ul
   line-height 1.3
+
+h1
+  font-size 238%
+  font-weight 700
 
 p
   a,
@@ -35,8 +44,90 @@ p
 img
   max-width 100%
 
+.padding-zero
+  margin 0
+  padding 0
+
+.red
+  color $red
+
+.orange
+  color $orange
+
+.yellow
+  color $yellow
+
+.green
+  color $green
+
+.blue
+  color $blue
+
+.violet
+  color $violet
+
+.red-back
+  color $white
+  background-color $red
+  &:before
+    background-color $red
+
+.orange-back
+  color $white
+  background-color $orange
+  &:before
+    background-color $orange
+
+.yellow-back
+  color $white
+  background-color $yellow
+  &:before
+    background-color $yellow
+
+.green-back
+  color $white
+  background-color $green
+  &:before
+    background-color $green
+
+.blue-back
+  color $white
+  background-color $blue
+  &:before
+    background-color $blue
+
+.violet-back
+  color $white
+  background-color $violet
+  &:before
+    background-color $violet
+
 .italic
   font-style italic
+
+//ngView Animations
+
+.slide
+  width 100%
+
+.slide.ng-enter, .slide.ng-leave
+  position absolute
+  -webkit-transition all 1s ease
+  transition all 1s ease
+
+.slide.ng-enter
+  left 100%
+
+.slide.ng-enter-active
+  left 0
+
+.slide.ng-leave
+  left 0
+
+.slide.ng-leave-active
+  left -100%
+
+
 
 //remove this section before live production
 .screen-resolution
@@ -56,16 +147,19 @@ html, body
   font-size 16px
   font-weight 400
   font-family "Lato", sans-serif
-  color $black
+  color $lgt-grey
 
+.container-fluid
+  min-height 100vh
 
-// HOME PAGE
+//HEADER
 
 header
   padding 8px 15px
 
 .header-logo
-  display block
+  display inline-block
+  z-index 9999
   img
     width 60px
 
@@ -81,6 +175,80 @@ nav
       span
         font-size 30px
         vertical-align: -12px
+
+//FOOTER
+
+footer
+  text-align center
+  p
+    padding 5px 0
+    font-size 75%
+    font-weight 300
+
+
+// HOME PAGE
+
+.home-screen
+  padding-top 30px
+  h1
+    padding-bottom 7px
+  h2
+    padding-bottom 7px
+    font-size 100%
+    font-weight 300
+  h3
+    padding-bottom 50px
+    font-size 100%
+    font-weight 400
+
+.me-container
+  margin 0 auto
+  width 90px
+  height 90px
+  border 2px solid $dark-grey
+  -webkit-border-radius 100%
+  -moz-border-radius 100%
+  border-radius 100%
+  overflow hidden
+
+.home-menu-item
+  font-size 131%
+  font-weight 300
+  &:before
+    content ""
+    position absolute
+    /* fill vertically */
+    top 0
+    bottom 0
+    width 9600px
+    right 100%
+    transition width 1s ease
+  p
+    padding 15px 0 15px 55px
+    vertical-align middle
+  span
+    position absolute
+    left 0
+    width 40px
+    text-align center
+    &.icon-circle
+      margin-top 2px
+      font-size 25px
+    &.icon-robot-toy
+      margin-top -7px
+      font-size 40px
+    &.icon-chemistry
+      margin-top -5px
+      font-size 35px
+    &.icon-astronaut-ingravity
+      margin-top -3px
+      font-size 37px
+    &.icon-attach
+      margin-top 0px
+      font-size 25px
+    &.icon-paper-plane
+      margin-top -2px
+      font-size 30px
 
 
 @import 'media-queries'

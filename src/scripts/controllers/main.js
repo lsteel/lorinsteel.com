@@ -1,12 +1,17 @@
 angular
-  .module('HomeController', [])
-  .controller('HomeController', [
+  .module('MainController', [
+    'ngRoute',
+  ])
+  .controller('MainController', [
     '$location',
     '$timeout',
     function ($location, $timeout) {
-      var homeCtrl = this;
+      var mainCtrl = this;
 
-      homeCtrl.scrollTop = function(location) {
+      mainCtrl.date = new Date();
+
+      console.log('reached main controller');
+      mainCtrl.scrollTop = function(location) {
         var locString = '/' + location;
         $('html, body').animate({
           scrollTop: $('body').offset().top

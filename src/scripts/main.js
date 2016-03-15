@@ -39,7 +39,7 @@ project.init = function(){
 
 	everySize();
 
-	showResolution();
+	//showResolution();
 
 };
 
@@ -53,7 +53,7 @@ $(window).resize(function() {
   winWidth = $(window).width();
   winHeight = $(window).height();
   everySize();
-	showResolution();
+	//showResolution();
 });
 
 function showResolution() {

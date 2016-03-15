@@ -25,7 +25,7 @@ angular
         else if ( data.success ) {
           contactCtrl.successMessage = message;
           $timeout(function() {
-            $location.url('/');
+            $location.url('#/');
           }, 5000);
         }
       });

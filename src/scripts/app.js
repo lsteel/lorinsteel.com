@@ -1,6 +1,8 @@
 angular
 .module('steelApp', [
   'ngRoute',
+  'ngAnimate',
+  'MainController',
   'HomeController',
   'ContactController',
 ])
