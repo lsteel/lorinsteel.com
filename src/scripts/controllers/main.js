@@ -19,7 +19,7 @@ angular
 
         $timeout(function() {
           $location.url(locString);
-        }, 175);
+        }, 200);
       };
     }
 ]);

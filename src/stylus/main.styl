@@ -48,6 +48,11 @@ img
   margin 0
   padding 0
 
+.over-hide
+  overflow hidden
+  overflow-x hidden
+  overflow-y auto
+
 .red
   color $red
 
@@ -105,27 +110,58 @@ img
 .italic
   font-style italic
 
+.bold
+  font-weight 700
+
+.light
+  font-weight 300
+
 //ngView Animations
 
 .slide
   width 100%
+  background $white
 
 .slide.ng-enter, .slide.ng-leave
   position absolute
   -webkit-transition all 1s ease
   transition all 1s ease
+  z-index 9999
 
 .slide.ng-enter
   left 100%
+  z-index 9998
 
 .slide.ng-enter-active
   left 0
+  z-index 9998
 
 .slide.ng-leave
   left 0
+  z-index 9999
 
 .slide.ng-leave-active
   left -100%
+  z-index 9999
+
+//BOOTSTRAP ALERATIONS
+
+.btn-info
+  color #fff
+  background-color $blue
+  border-color $blue
+
+.btn-info:focus,
+.btn-info.focus
+  color $blue
+  background-color $white
+  border-color $blue
+
+.btn-info:hover
+  color $blue
+  background-color $white
+  border-color $blue
+
 
 
 
@@ -151,6 +187,9 @@ html, body
 
 .container-fluid
   min-height 100vh
+  > .row
+    padding-bottom 25px
+    min-height 100vh
 
 //HEADER
 
@@ -179,10 +218,14 @@ nav
 //FOOTER
 
 footer
+  position absolute
+  bottom 0
+  width 100%
   text-align center
+  background $white
   p
     padding 5px 0
-    font-size 75%
+    font-size 12px
     font-weight 300
 
 
@@ -249,6 +292,90 @@ footer
     &.icon-paper-plane
       margin-top -2px
       font-size 30px
+
+//CONTACT PAGE
+
+.contact-screen
+  padding 30px 0 0
+  background $white
+
+.contact-content
+  padding 0
+  h1 span
+    font-size 85%
+    vertical-align middle
+  p
+    padding-bottom 30px
+
+.form-container
+  padding 0
+  span
+    font-weight 700
+  hr
+    margin 0 0 10px 0
+    border-top 1px solid $dark-grey
+  button, button:focus, .btn:focus
+    outline none
+  input, textarea
+    -webkit-appearance none
+    color $dark-grey
+    font-weight 300
+    border none
+    resize none
+    outline none
+  ::-webkit-input-placeholder
+    color $dark-grey
+  :-moz-placeholder /* Firefox 18- */
+    color $dark-grey
+  ::-moz-placeholder /* Firefox 19+ */
+    color $dark-grey
+  :-ms-input-placeholder
+    color $dark-grey
+  textarea
+    width 100%
+    font-weight 700
+    background transparent
+    ::-webkit-input-placeholder
+      font-weight 700
+    :-moz-placeholder /* Firefox 18- */
+      font-weight 700
+    ::-moz-placeholder /* Firefox 19+ */
+      font-weight 700
+    :-ms-input-placeholder
+      font-weight 700
+  .ng-touched
+    &.ng-empty::-webkit-input-placeholder
+      color $red
+    &.ng-empty:-moz-placeholder /* Firefox 18- */
+      color $red
+    &.ng-empty::-moz-placeholder /* Firefox 19+ */
+      color $red
+    &.ng-empty:-ms-input-placeholder
+      color $red
+  .form-group
+    margin-bottom 10px
+  .email-group
+    font-size 169%
+    input
+      font-weight 700
+    ::-webkit-input-placeholder
+      font-weight: 700
+    :-moz-placeholder /* Firefox 18- */
+      font-weight: 700
+    ::-moz-placeholder /* Firefox 19+ */
+      font-weight: 700
+    :-ms-input-placeholder
+      font-weight: 700
+    .ng-dirty.ng-invalid-email
+      color $red
+    .ng-dirty.ng-valid-email
+      color $green
+
+.textarea-shadow
+  -moz-box-shadow: inset  0  8px 8px -8px $white, inset  0 -8px 8px -8px $white;
+  -webkit-box-shadow: inset  0  8px 8px -8px $white, inset  0 -8px 8px -8px $white;
+  box-shadow: inset  0  8px 8px -8px $white, inset  0 -8px 8px -8px $white;
+  background transparent
 
 
 @import 'media-queries'

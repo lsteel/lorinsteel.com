@@ -13,7 +13,7 @@
     <!-- Includes all compiled css based bower components; i.e. bootstrap.css, main.css, etc. -->
     <link rel="stylesheet" href="css/app.min.css">
   </head>
-  <body ng-controller="MainController as mainCtrl">
+  <body ng-controller="MainController as mainCtrl" class="over-hide">
     <div class="container-fluid">
       <div class="row">
         <header>
@@ -27,11 +27,7 @@
             </ul>
           </nav>
         </header>
-      </div>
-      <div class="row">
         <div ng-view class="col-xs-12 slide"></div>
-      </div>
-      <div class="row">
         <footer>
           <p>&copy; Copyright {{mainCtrl.date | date:'yyyy'}} Lorin Steel</p>
         </footer>

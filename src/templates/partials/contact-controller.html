@@ -1,30 +1,40 @@
 <div class="row">
   <div class="contact-screen col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-    <h1>Contact</h1>
-    <form method="post" name="form" role="form" ng-submit="form.$valid && contactCtrl.submit(input)" novalidate>
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input class="form-control" type="text" id="name" name="name" ng-model="input.name" maxlength="50">
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input class="form-control" type="email" id="email" name="email" ng-model="input.email" maxlength="50">
-        </div>
-        <div class="form-group">
-          <label for="messsage">Message:</label>
-          <textarea class="form-control" id="messsage" name="message" ng-model="input.message" maxlength="2000"></textarea>
-        </div>
-        <div class="form-group hidden">
-          <label class="hidden" for="poohbear">You're a bot if you enter something here:</label>
-          <input class="form-control hidden" type="text" id="poohbear" name="poohbear" ng-model="input.poohbear">
-        </div>
-      <button type="submit" name="submit" ng-click="contactCtrl.inputType = 'contact'" class="btn btn-default">Submit</button>
-    </form>
-    <div class="alert alert-danger" ng-show="contactCtrl.errorMessage">
-      <p>{{ contactCtrl.errorMessage }}</p>
+    <div class="contact-content col-xs-12 text-center">
+      <h1><span class="violet icon-paper-plane"></span> Contact Me.</h1>
+      <p>Hit me up. I'm available for freelance.</p>
     </div>
-    <div class="alert alert-success" ng-show="contactCtrl.successMessage">
-      <p>{{ contactCtrl.successMessage }}</p>
+    <div class="form-container col-xs-12">
+      <form method="post" name="myForm" role="form" ng-submit="form.$valid && contactCtrl.submit(input)" novalidate>
+          <div class="form-group">
+            <p class="light"><span class="bold">To:</span> Lorin Steel</p>
+            <label for="name">From:&nbsp;</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" ng-model="input.name" maxlength="50">
+          </div>
+          <hr>
+          <div class="form-group email-group">
+            <input type="email" id="email" name="email" placeholder="you@example.com" ng-model="input.email" maxlength="50">
+          </div>
+          <div class="form-group">
+            <div class="textarea-shadow">
+              <textarea id="messsage" name="message" rows="6" placeholder="Your message here..." ng-model="input.message" maxlength="2000"></textarea>
+            </div>
+          </div>
+          <div class="form-group hidden">
+            <label class="hidden" for="poohbear">You're a bot if you enter something here:</label>
+            <input class="hidden" type="text" id="poohbear" name="poohbear" ng-model="input.poohbear">
+          </div>
+          <hr>
+        <button ng-disabled="myForm.$invalid" type="submit" name="submit" ng-click="contactCtrl.inputType = 'contact'" class="btn btn-info">send</button>
+      </form>
+    </div>
+    <div class="alert-container">
+      <div class="alert alert-danger" ng-show="contactCtrl.errorMessage">
+        <p>{{ contactCtrl.errorMessage }}</p>
+      </div>
+      <div class="alert alert-success" ng-show="contactCtrl.successMessage">
+        <p>{{ contactCtrl.successMessage }}</p>
+      </div>
     </div>
   </div>
 </div>
