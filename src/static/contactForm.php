@@ -15,12 +15,12 @@
 
         if ( $name == '' && $email == '' && $message == '' ) {
           $response[ 'success' ] = false;
-          $response[ 'message' ] = 'Name, Email, and Message fields are required.';
+          $response[ 'message' ] = 'Name, Email, and Message fields are required. Please try again.';
         }
 
         else if ( $name == '' || $email == '' || $message == '' ) {
           $response[ 'success' ] = false;
-          $response[ 'message' ] = 'Name, Email, and Message fields are required.';
+          $response[ 'message' ] = 'Name, Email, and Message fields are required. Please try again.';
         }
 
         else if ( $name != '' && $email != '' && $message != '' ) {
@@ -38,7 +38,7 @@
 
             if ( $success ) {
                 $response[ 'success' ] = true;
-                $response[ 'message' ] = 'Thank you! Your message has been sent!';
+                $response[ 'message' ] = 'Thank you! Your message has been sent! You will be rerouted in 5 seconds.';
             }
         }
     }

@@ -5,7 +5,7 @@
       <p>Hit me up. I'm available for freelance.</p>
     </div>
     <div class="form-container col-xs-12">
-      <form method="post" name="myForm" role="form" ng-submit="form.$valid && contactCtrl.submit(input)" novalidate>
+      <form method="post" name="form" role="form" ng-submit="form.$valid && contactCtrl.submit(input)" novalidate>
           <div class="form-group">
             <p class="light"><span class="bold">To:</span> Lorin Steel</p>
             <label for="name">From:&nbsp;</label>
@@ -16,19 +16,17 @@
             <input type="email" id="email" name="email" placeholder="you@example.com" ng-model="input.email" maxlength="50">
           </div>
           <div class="form-group">
-            <div class="textarea-shadow">
-              <textarea id="messsage" name="message" rows="6" placeholder="Your message here..." ng-model="input.message" maxlength="2000"></textarea>
-            </div>
+            <textarea id="messsage" name="message" rows="6" placeholder="Your message here..." ng-model="input.message" maxlength="2000"></textarea>
           </div>
           <div class="form-group hidden">
             <label class="hidden" for="poohbear">You're a bot if you enter something here:</label>
             <input class="hidden" type="text" id="poohbear" name="poohbear" ng-model="input.poohbear">
           </div>
           <hr>
-        <button ng-disabled="myForm.$invalid" type="submit" name="submit" ng-click="contactCtrl.inputType = 'contact'" class="btn btn-info">send</button>
+        <button type="submit" name="submit" ng-click="contactCtrl.inputType = 'contact'" class="btn btn-info">send</button>
       </form>
     </div>
-    <div class="alert-container">
+    <div class="alert-container col-xs-12">
       <div class="alert alert-danger" ng-show="contactCtrl.errorMessage">
         <p>{{ contactCtrl.errorMessage }}</p>
       </div>
