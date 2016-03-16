@@ -9,9 +9,7 @@ angular
   function (contactFuncs, $timeout, $location) {
     var contactCtrl = this;
 
-    $('.slide').css({
-      'min-height': $(window).height() - $('header').outerHeight() - $('footer').outerHeight()
-    });
+    contactCtrl.messageMax = 2000;
 
     contactCtrl.scrollTop = function(location) {
       var locString = '/' + location;

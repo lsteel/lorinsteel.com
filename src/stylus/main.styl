@@ -179,17 +179,14 @@ html, body
   padding 0
   width 100%
   height auto
-  min-height 100vh
   font-size 16px
   font-weight 400
   font-family "Lato", sans-serif
   color $lgt-grey
 
 .container-fluid
-  min-height 100vh
   > .row
     padding-bottom 25px
-    min-height 100vh
 
 //HEADER
 
@@ -257,15 +254,15 @@ footer
 .home-menu-item
   font-size 131%
   font-weight 300
-  &:before
-    content ""
-    position absolute
-    /* fill vertically */
-    top 0
-    bottom 0
-    width 9600px
-    right 100%
-    transition width 1s ease
+  // &:before
+  //   content ""
+  //   position absolute
+  //   /* fill vertically */
+  //   top 0
+  //   bottom 0
+  //   width 9600px
+  //   right 100%
+  //   transition width 1s ease
   p
     padding 15px 0 15px 55px
     vertical-align middle
@@ -313,8 +310,8 @@ footer
   p
     margin 0
     padding 0
-  span
-    font-weight 700
+    span
+      font-weight 700
   label
     margin 0
     padding 0
@@ -333,25 +330,25 @@ footer
     border none
     resize none
     outline none
-  ::-webkit-input-placeholder
-    color $dark-grey
-  :-moz-placeholder /* Firefox 18- */
-    color $dark-grey
-  ::-moz-placeholder /* Firefox 19+ */
-    color $dark-grey
-  :-ms-input-placeholder
-    color $dark-grey
+    &::-webkit-input-placeholder
+      color $dark-grey
+    &:-moz-placeholder /* Firefox 18- */
+      color $dark-grey
+    &::-moz-placeholder /* Firefox 19+ */
+      color $dark-grey
+    &:-ms-input-placeholder
+      color $dark-grey
   textarea
     width 100%
     font-weight 700
     background transparent
-    ::-webkit-input-placeholder
+    &::-webkit-input-placeholder
       font-weight 700
-    :-moz-placeholder /* Firefox 18- */
+    &:-moz-placeholder /* Firefox 18- */
       font-weight 700
-    ::-moz-placeholder /* Firefox 19+ */
+    &::-moz-placeholder /* Firefox 19+ */
       font-weight 700
-    :-ms-input-placeholder
+    &:-ms-input-placeholder
       font-weight 700
   .ng-touched
     &.ng-empty::-webkit-input-placeholder
@@ -369,17 +366,29 @@ footer
     input
       font-weight 700
     ::-webkit-input-placeholder
+      color #cccccc
       font-weight: 700
     :-moz-placeholder /* Firefox 18- */
+      color #cccccc
       font-weight: 700
     ::-moz-placeholder /* Firefox 19+ */
+      color #cccccc
       font-weight: 700
     :-ms-input-placeholder
+      color #cccccc
       font-weight: 700
     .ng-dirty.ng-invalid-email
       color $red
     .ng-dirty.ng-valid-email
       color $green
+
+.message-count
+  display inline-block
+  position absolute
+  right 0
+  padding 7px 0
+  color $lgt-grey
+  font-weight 300
 
 .alert-container
   padding 0 0 20px

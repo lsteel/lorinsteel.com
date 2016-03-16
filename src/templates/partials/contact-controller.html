@@ -24,6 +24,7 @@
           </div>
           <hr>
         <button type="submit" name="submit" ng-click="contactCtrl.inputType = 'contact'" class="btn btn-info">send</button>
+        <span class="message-count">{{ contactCtrl.messageMax - input.message.length }}</span>
       </form>
     </div>
     <div class="alert-container col-xs-12">
